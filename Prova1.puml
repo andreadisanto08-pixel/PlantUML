@@ -1,7 +1,0 @@
-@startuml
-
-Class uno {
-int primo
-String secondo
-}
-@enduml
