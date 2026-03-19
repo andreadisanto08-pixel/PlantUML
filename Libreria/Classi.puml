@@ -1,0 +1,15 @@
+@startuml
+class Libro{
+    -titolo : String
+    -autore : String
+    -annopubb : int
+    -prezzo : double
+    -disponibile : boolean
+    +Libro(String titolo,String autore,int annopubb,double prezzo,boolean disponibile)
+    +MostraInfo()
+}
+
+
+
+
+@enduml
