@@ -1,0 +1,26 @@
+@startuml 
+title  Diagramma di sequenza
+
+actor Utente
+participant Interfaccia
+participant Logica 
+database Database
+Utente -> Interfaccia : Clicca "Entra Auto"
+Interfaccia -> Logica : Esegui entraAuto()
+activate Logica
+Logica -> Database : Verifica disponibilità posti
+alt Posto disponibile
+Database --> Logica : Posto disponibile "3"
+Logica -> Database : Metti posto "3" occupato
+Database --> Logica : Impostato correttamente occupato
+Logica -> Interfaccia : Auto entrata, posto assegnato "3"
+deactivate Logica
+Interfaccia -> Utente : Prenotazione confermata al posto "3"
+else Nessun posto disponibile
+Database --> Logica : Nessun posto disponibile
+Logica -> Interfaccia : Nessun posto disponibile
+deactivate Logica
+Interfaccia -> Utente : Nessun posto disponibile, prenotazione fallita
+end
+
+@enduml
