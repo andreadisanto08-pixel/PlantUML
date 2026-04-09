@@ -1,0 +1,22 @@
+@startuml 
+title Casi d'uso
+
+actor Utente
+
+package "Sistema di parcheggio" {
+    usecase  "registra ingresso"  as RI 
+    usecase  "registra uscita" as RU
+    usecase  "visualizza stato " as VS
+    usecase "parcheggio pieno" as ERR
+}
+
+Utente --> RI
+Utente --> RU
+Utente --> VS
+
+RI ..> VS :<<include>> 
+RU ..> VS :<<include>> 
+
+ERR ..> RI : <<extend>>
+ 
+@enduml

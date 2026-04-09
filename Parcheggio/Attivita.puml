@@ -1,0 +1,16 @@
+@startuml
+
+title Diagramma delle attività 
+start
+:il cliente arriva al parcheggio;
+:il cliente richiede un posto auto;;
+:il sistema verificà la disponibilità dei posti;
+if(posto disponibile) then (sì)
+    :il sistema assegna un posto al cliente;
+    :il cliente parcheggia l'auto;
+    else (no)
+    :il sistema informa il cliente che non ci sono posti disponibili;
+endif
+:il cliente paga il parcheggio;
+end
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+[*] --> Libero
+
+state Libero {
+  entry / valore = 0
+  entry / spunta = verde
+}
+
+Libero --> Occupato : entraAuto()
+
+state Occupato {
+  entry / valore = 1
+  entry / spunta = rossa
+}
+
+Occupato --> Libero : esceAuto()
+@enduml
