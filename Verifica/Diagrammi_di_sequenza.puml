@@ -1,0 +1,16 @@
+@startuml
+title Diagramma di sequenza
+
+actor Utente
+participant Sistema
+database Database 
+
+Utente -> Sistema : utente sceglie il film e lo seleziona
+Sistema -> Database : l'utente ha un abbonamento valido?
+Database --> Sistema : si 
+Sistema -> Database : dammi i dati del film che ha scelto
+Database --> Sistema : Database fornisce i dati del film
+Sistema -> Utente : mostra il film a schermo
+Sistema -> Database : salva il progresso del film
+
+@enduml

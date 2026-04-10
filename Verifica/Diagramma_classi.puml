@@ -1,0 +1,47 @@
+@startuml
+
+title Diagramma CLassi
+
+class Utente{
+    - ID : String
+    void EliminareUtente
+}
+class Profilo{
+    - nome : String
+    void AggiungereProfilo()
+    void rimuovereProfilo()
+}
+class Catalogo{
+    - titolo : String
+    void VisualizzaCatalogo()
+}
+class Contenuti{
+    - genere : String
+    void dislikeContenuto()
+}
+class Watchlist{
+    - visto : boolean
+    void aggiungiAllaWatchlist
+}
+class Abbonamento{
+    -abbonamento : String
+    void upgradeAbbonamento()
+}
+
+
+Utente "1" *-- "fino a 4 dipene da abbonamento" Profilo  : contiene
+Abbonamento "1" *-- "o 1 o 4" Profilo  : contiene
+Watchlist O-- Contenuti : collegata
+Watchlist O-- Catalogo : collegata
+
+
+
+
+
+
+
+
+
+
+
+@enduml

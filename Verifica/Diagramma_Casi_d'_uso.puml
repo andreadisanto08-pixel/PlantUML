@@ -1,0 +1,40 @@
+@startuml
+title Diagramma Casi d'UsecaseBorderColor
+
+actor  Utente
+actor Sistema
+actor Database
+
+package "casi di uso"{
+    usecase "aggiungi profilo" as SP
+    usecase "aggiungere contenuti alla watchlist " as CC
+    usecase "aggiorna cronologia " as AC
+    usecase "salva il progresso " as SIP
+    usecase "profilo inaggiugibile" as ERR
+}
+
+Database --> SIP 
+Utente --> SP
+Sistema --> CC
+Sistema --> AC
+
+
+
+ERR --> SP : <<extend>>
+CC --> SIP : <<include>>
+AC --> SIP : <<include>>
+SP --> SIP : <<include>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

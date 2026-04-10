@@ -1,0 +1,23 @@
+@startuml
+title  Diagramma di attivita
+start
+:utente va nella pagina per aggiungere profilo;
+:preme il bottone per aggiungere un profilo;
+:il sistema controlla il tipo di abbonamento dell utente;
+if("abbonamento") then(base)
+:profili massimi da avere 1;
+:non si possono aggiungere profili;
+else (premium)
+:profili massimi da avere 4;
+if(profili) then ("<4")
+:sistema aggiunge un profilo;
+:utente vede a schermo il profilo aggiunto;
+else ("=4")
+:profili finiti;
+:non si possono aggiungere profili;
+endif
+endif
+:utente torna alla pagina principale;
+stop
+
+@enduml
