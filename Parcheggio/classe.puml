@@ -1,0 +1,22 @@
+@startuml
+
+title Diagramma delle Classi
+
+class Parcheggio {
+    - capienza: int
+    - posti: PostoAuto[]
+    + entraAuto(): void
+    + esceAuto(): void
+}
+
+class PostoAuto {
+    - numeroPosto: int
+    - occupato: boolean
+    + getStato(): boolean
+    + setStato(occupato: boolean): void
+}
+
+Parcheggio "1" *-- "10" PostoAuto : contiene
+
+
+@enduml
