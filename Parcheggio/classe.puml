@@ -5,6 +5,7 @@ title Diagramma delle Classi
 class Parcheggio {
     - capienza: int
     - posti: PostoAuto[]
+    + Parcheggio (capienza: int , posti: PostoAuto[])
     + entraAuto(): void
     + esceAuto(): void
 }
@@ -12,6 +13,7 @@ class Parcheggio {
 class PostoAuto {
     - numeroPosto: int
     - occupato: boolean
+    
     + getStato(): boolean
     + setStato(occupato: boolean): void
 }
